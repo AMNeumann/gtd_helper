@@ -13,7 +13,13 @@ RUN git clone https://github.com/GothenburgBitFactory/timewarrior.git /timewarri
       mkdir /build-timewarrior && cd /build-timewarrior && cmake -DCMAKE_BUILD_TYPE=Release /timewarrior && make && make install
 RUN pip3 install jrnl
 
-ADD taskrc /.taskrc
-ADD jrnl_config /.jrnl_config
+RUN addgroup -g 236 cc-ilf
+RUN adduser -D -u 7183 neumanna cc-ilf
+
+ADD taskrc /home/neumanna/.taskrc
+ADD jrnl_config /home/neumanna/.jrnl_config
+RUN chown --recursive neumanna:cc-ilf /home/neumanna
+
+USER 7183:236
 
 

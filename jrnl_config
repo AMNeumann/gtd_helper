@@ -1,6 +1,6 @@
 {
   "journals": {
-    "default": "/journal/journal.txt"
+    "default": "/home/neumanna/journal/journal.txt"
   },
   "editor": "vim",
   "encrypt": false,
