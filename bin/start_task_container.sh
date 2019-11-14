@@ -4,7 +4,7 @@ docker image ls | grep -q taskwarrior
 if [[ $? -ne 0 ]]
 then
    echo "Need to load taskwarrior image from file"
-   docker load ~/.local/docker/tarkwarrior.tar
+   docker load < ~/.local/docker/taskwarrior.tar
 fi
 
 docker run -it --rm \
