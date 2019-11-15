@@ -11,7 +11,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=/home/neumanna/.task
+data.location=/home/theuser/.task
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
@@ -38,5 +38,3 @@ urgency.user.tag.waitfor.coefficient=-10.0   # Can't do anything about these now
 urgency.annotations.coefficient=0
 urgency.tags.coefficient=0
 urgency.project.coefficient=0
-
-context.vorgreg=proj:vorgreg

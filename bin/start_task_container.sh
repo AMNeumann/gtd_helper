@@ -1,16 +1,16 @@
 #!/bin/bash
 
-docker image ls | grep -q taskwarrior
+docker image ls | grep -q gtd_helper
 if [[ $? -ne 0 ]]
 then
-   echo "Need to load taskwarrior image from file"
-   docker load < ~/.local/docker/taskwarrior.tar
+   echo "Need to load gtd_helper image from file"
+   docker load < ~/.local/docker/gtd_helper.tar
 fi
 
 docker run -it --rm \
-   --volume=/home/neumanna/.task:/home/neumanna/.task \
-   --volume=/home/neumanna/.timewarrior/:/home/neumanna/.timewarrior \
-   --volume=/home/neumanna/journal/:/home/neumanna/journal \
-   --volume=/home/neumanna/.config/jrnl/:/home/neumanna/.config/jrnl \
-   taskwarrior:latest $@
+   --volume=$HOME/.task:/home/theuser/.task \
+   --volume=$HOME/.timewarrior/:/home/theuser/.timewarrior \
+   --volume=$HOME/journal/:/home/theuser/journal \
+   --volume=$HOME/.config/jrnl/:/home/theuser/.config/jrnl \
+   gtd_helper:latest $@
 #  --user "`id -u`:`id -g`" \
